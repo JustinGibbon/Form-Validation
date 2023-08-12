@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Group Assignment</title>
+    <link rel="stylesheet" href="gp.css">
+    <script src="gp.js">
+        function checkEmail(email) {
+            const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return regex.test(email);
+        }
+
+        function updateInputStyle(inputElement) {
+            if (validateEmail(inputElement.value)) {
+                inputElement.style.border = '1px solid green';
+            } else {
+                inputElement.style.border = '1px solid red';
+            }
+        }
+        function lastValide(inputElement){
+            if(validateEmail(inputElement.value)&& typeof inputElement == 'string'){
+                inputElement.style.border = '1px solid green';
+            }else{
+                inputElement.style.border = '1px solid red';
+            }
+        }
+        function firstValidate(inputElement){
+            if(validateEmail(inputElement.value)&& typeof inputElement == 'string'){
+                inputElement.style.border = '1px solid green';
+            }else{
+                inputElement.style.border = '1px solid red';
+            }
+        }
+        function countryValidate(inputElement){
+            if(countryValidate(inputElement.value)&& typeof inputElement == 'string'){
+                inputElement.style.border = '1px solid green';
+            }
+            else{
+                inputElement.style.border = '1px solid red';
+            }
+        }
+        function phoneValidate(inputElement){
+            if(phoneValidate(inputElement.validate) && inputElement.length == 10 && typeof inputElement.value == 'number'){
+                inputElement.style.border = '1px solid green';
+            }else{
+                inputElement.style.border = '1px solid red';
+            }
+        }
+        function idValidate(inputElement){
+            if(idValidate(inputElement.value)){
+                inputElement.style.border = '1px solid green';
+            }else{
+                inputElement.style.border = '1px solid red';
+            }
+        }
+        function cityValidate(inputElement){
+            if(cityValidate(inputElement.value) && typeof inputElement == 'string'){
+                inputElement.style.border = '1px solid green';
+            }else{
+                inputElement.style.border = '1px solid red';
+            }
+        }
+        function stateValidate(inputElement){
+            if(stateValidate(inputElement.value) && typeof inputElement =='string'){
+                inputElement.style.border = '1px solid green';
+            }else{
+                inputElement.style.border = '1px solid red';
+            }
+        }
+    </script>
+</head>
+<body>
+    <nav>
+        Navigation
+    </nav>
+    <header>
+        <h1>Basic Details</h1>
+        <hr>
+        <div id="error"></div>
+    </header>
+    <main>
+        <div class="form-container">
+            <form id="form">
+                <label for="fname">First Name</label>
+                <div class="line-input">
+                    <input type="text" id="fname" name="fname" onkeyup="firstValidate()" required>
+                </div>
+    
+                <label for="email">Email ID</label>
+                <div class="line-input">
+                    <input type="text" id="email" name="email" onkeyup="updateInputStyle()">
+                </div>
+    
+                <label for="country">Country</label>
+                <div class="line-input">
+                    <input type="text" id="country" name="country" onkeyup="countryValidate()" required>
+                </div>
+    
+                <label for="phone">Phone Number</label>
+                <div class="line-input">
+                    <input type="tel" id="phone" name="phone" onkeyup="phoneValidate()" required>
+                </div>
+            </form>
+        </div>
+    </main>
+    
+    <aside>
+        <form id="form">
+
+            <div class="line-input">
+                <label for="lname">Last Name</label>
+                <input type="text" id="lname" name="lname" required onkeyup="lastValide()">
+            </div>
+    
+            <div class="line-input">
+                <label for="userid">Your User ID</label>
+                <input type="text" id="userid" name="userid" onkeydown="idValidate()" required>
+            </div>
+    
+            <div class="line-input">
+                <div style="display: flex; flex-direction: row;">
+                    <div style="flex: 1;">
+                        <label for="state">State</label><br>
+                        <input type="text" id="state" name="state" onkeyup="stateValidate()" required>
+                        
+                    </div>
+    
+                    <div style="flex: 1; margin-left: 100px;">
+                        <label for="city">City</label><br>
+                        <input type="text" id="city" name="city" onkeyup="cityValidate()" required>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="line-input">
+                <div class="input-container">
+                    <label for="reference" class="input-label">Reference Code</label>
+                    <input type="text" id="reference" name="reference" class="input-field" >
+                </div>
+            </div>
+
+        </form>
+    </aside>
+    <footer>
+        <hr>
+        <div>
+            <form id="form">
+            <button type="reset" class="reset-button" id = 'reset'>Reset All</button>
+            <button type="submit" class="continue-button" id = 'submit'  onclick="submitForms()">Continue</button>
+            </form>
+        </div>
+    </footer>
+</body>
+</html>  

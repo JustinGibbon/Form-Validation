@@ -1,0 +1,125 @@
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  height: 100vh;
+  border-right-width: 100px;
+  display: grid;
+  grid-template-areas:
+    'nav header header'
+    'nav content sidebar'
+    'nav footer footer';
+  grid-template-columns: 10% 45% 45%;
+  grid-template-rows: 10% 1fr 20%;
+}
+
+header {
+  grid-area: header;
+  padding-top: 30px;
+  padding-left: 70px;
+  padding-right: 70px;
+  color: #0da4eb;
+}
+
+nav {
+  grid-area: nav;
+  color: #0da4eb;;
+  background-color: #0da4eb;
+}
+
+main {
+  color: rgb(105, 105, 105);
+  padding: 80px;
+  grid-area: content;
+  outline: 0px solid transparent;
+}
+
+aside {
+  color: rgb(105, 105, 105);
+  padding: 80px;
+  grid-area: sidebar;
+  outline: 0px solid transparent;
+}
+
+footer {
+  grid-area: footer;
+  padding: 70px;
+}
+
+button {
+  background-color: #0da4eb;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.footer-buttons {
+  display: flex;
+  padding-top: 40px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.reset-button {
+  border-radius: 50px;
+  font-size: 16px;
+  background-color: transparent;
+  color: rgb(105, 105, 105); 
+}
+
+.continue-button {
+  background-color: #0da4eb;
+  border-radius: 50px; 
+  font-size: 16px; /
+}
+
+.line-input {
+  position: relative;
+  margin-bottom: 20px;
+  padding: 10px;
+}
+
+.line-input input {
+  border: none;
+  outline: none;
+  border-bottom: 1px solid rgb(105, 105, 105);
+  width: 100%;
+  padding: 10px;
+}
+
+label {
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.input-container {
+  position: relative;
+}
+
+.input-label {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: rgb(105, 105, 105);
+  transition: all 0.3s;
+}
+
+.input-field {
+  border: none;
+  outline: none;
+  border-bottom: 1px solid rgb(105, 105, 105);
+  width: 100%;
+  padding: 10px;
+}
+
+.line-input:hover label {
+  color: #0da4eb;
+}
+
+.line-input:hover input {
+  border-bottom: 2px solid #0da4eb;
+  transition: border-color 0.3s;
+}
